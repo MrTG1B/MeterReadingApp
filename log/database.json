@@ -1,0 +1,13 @@
+{
+    "072024": {
+        "date": "15 July 2024",
+        "thismr": 7000.0,
+        "lastmr": 6000.0,
+        "unit_consumed": 1000.0,
+        "money": 8000.0,
+        "watercost": 100.0,
+        "tmoney": 8100.0,
+        "advance": 0.0,
+        "gt_money": 8100.0
+    }
+}
