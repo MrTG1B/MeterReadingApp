@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meter Reading App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="static/images/favicon.png" >
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+</head>
+
+<body>
+    <h4>Meter Reading App</h4>
+
+    <div id="data">
+        <button id="detailsBtn" class="dataBtn">
+            <img src="{{ url_for('static', filename='images/details.png') }}" alt="details" class="button-icon">
+        </button>
+    </div>
+
+    <div id="detailsSlideArea" class="slide">
+        <div id="backArea">
+            <button id="detailsBackButton">
+                <img src="{{ url_for('static', filename='images/back.png') }}" alt="Back" class="back_button-icon">
+            </button>
+        </div>
+        <div id="detailsArea">
+            <div id="detailList" class="details">
+                <p id="detailsTitle">Bill of :</p>
+                <select id="month" name="month" >
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+
+                <select id="year" name="year">
+
+                </select>
+            </div>
+            <div id="searchContainer" class="hidden">
+                <h3>This Month Reading: <span id="SthisMonth"></span> kWh</h3>
+                <h3>Last Month Reading: <span id="SlastMonth"></span> kWh</h3>
+                <h5>Unit Consumed: <span id="SunitConsumed"></span> kWh</h5>
+                <h6 class="money">Money: ₹ <span id="Smoney" ></span></h6>
+                <h3>Water Cost: ₹ <span id="SwaterCostDis"></span></h3>
+                <h6 class="money">Total: ₹ <span id="StMoney"></span></h6>
+                <h3>Advance: ₹ <span id="SadvanceDis"></span></h3>
+                <h6 class="money">Grand Total: ₹ <span id="SgtMoney"></span></h6>
+            </div>
+            <div id="nfMsg" class="hidden">
+                <h1 id="errMsg">Could Not Find the Bill</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="inputContainer">
+        <h2>Input Meter Reading</h2>
+        <div class="input-wrapper">
+            <input type="number" id="meterReading" name="meterReading" placeholder="Enter Reading" required>
+            <span class="unit">kWh</span>
+        </div>
+        <h2>Input Water Cost</h2>
+        <input type="number" id="waterCost" name="waterCost" placeholder="Enter Water Cost" value="100" required>
+        <h2>Input Advance</h2>
+        <input type="number" id="advance" name="advance" placeholder="Enter Advance" value="0" required>
+        <button id="submitBtn" class="submitBtn">Submit<svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></button>
+    </div>
+
+    <div id="resultContainer" class="hidden">
+        <h1>Bill as on <span id="date"></span></h1>
+        <h3>This Month Reading: <span id="thisMonth"></span> kWh</h3>
+        <h3>Last Month Reading: <span id="lastMonth"></span> kWh</h3>
+        <h5>Unit Consumed: <span id="unitConsumed"></span> kWh</h5>
+        <h6>Money: ₹ <span id="money"></span></h6>
+        <h3>Water Cost: ₹ <span id="waterCostDis"></span></h3>
+        <h6>Total: ₹ <span id="tMoney"></span></h6>
+        <h3>Advance: ₹ <span id="advanceDis"></span></h3>
+        <h6>Grand Total: ₹ <span id="gtMoney"></span></h6>
+    </div>
+
+    <audio id="submitSound" src="{{ url_for('static', filename='sounds/submit_sound.mp3') }}"></audio>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
