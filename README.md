@@ -88,6 +88,3 @@ Feel free to fork this repository and contribute by submitting a pull request. F
 ## License
 
 This project is licensed under the MIT License.
-
-
-This `README.md` provides a comprehensive guide for users to run your PWA, install it on their mobile devices, and understand its features and structure. Make sure to update any URLs and paths to match your actual project setup.
