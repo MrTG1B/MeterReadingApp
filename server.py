@@ -1,7 +1,7 @@
 # Meter Reading Progressive Web App (PWA)
 # ========================================
 # Author: Tirthankar Dasgupta
-# GitHub: https://github.com/MrTG2004
+# GitHub: https://github.com/MrTG1B
 # 
 # Description:
 # This Python script sets up a Flask web server for a Progressive Web App (PWA) 
